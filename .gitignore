@@ -1,0 +1,8 @@
+node_modules/
+dist/*
+!dist/.gitkeep
+target/
+src-tauri/gen/
+*.log
+.DS_Store
+tsconfig.tsbuildinfo

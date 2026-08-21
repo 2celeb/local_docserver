@@ -1,0 +1,27 @@
+[package]
+name = "local-docserver"
+version.workspace = true
+edition.workspace = true
+description = "Local documentation server (HTML / Markdown / Mermaid) with cross-repository search"
+
+[lib]
+name = "local_docserver_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+docserver-core = { path = "../crates/docserver-core" }
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+tauri-plugin-dialog = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["rt-multi-thread"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+anyhow = "1"
+notify = "8"
+notify-debouncer-mini = "0.6"
+open = "5"

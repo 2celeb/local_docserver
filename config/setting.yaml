@@ -1,0 +1,16 @@
+# local_docserver 設定ファイル
+server:
+  host: 127.0.0.1
+  port: 8765          # 0 で自動割当
+  open_browser: false # 起動時に外部ブラウザを開く
+
+# 公開するリポジトリ / ディレクトリ（複数可）
+roots:
+  - name: sample-docs        # 表示名・URL プレフィックス (/r/sample-docs/...)
+    path: /home/user/src/sample-docs   # 絶対パス推奨（相対パスは本ファイルの位置基準で解決）
+    exclude: ["node_modules"]
+
+include_extensions: [html, htm, md, markdown, mmd, mermaid]
+respect_gitignore: true
+watch: true
+max_depth: 20
